@@ -1,0 +1,39 @@
+/** Theme Colors */
+$c-black: #333;
+$c-black-two: #242424;
+$c-white: #fff;
+$c-light-red: #da5d8b;
+
+$c-primary: $c-black;
+$c-secondary: $c-white;
+$c-tertiary: $c-light-red;
+$c-dark: $c-black-two;
+
+/**
+ * Container's maximum width
+ * @type Length
+ */
+$site-width: 1280px !default;
+
+/** Theme Fonts */
+$f-basic: "Titillium Web", sans-serif;
+
+/**
+ * Relative or absolute URL where all assets are served from
+ * @type String
+ * @example scss - When using a CDN
+ * $base-url: 'http://cdn.example.com/assets/';
+ */
+$base-url: "../" !default;
+
+/**
+ * Grid breakpoints
+
+ * Define the minimum dimensions at which your layout will change,
+ * adapting to different screen sizes, for use in media queries.
+ */
+$media-xs: 576px;
+$media-sm: 768px;
+$media-md: 992px;
+$media-lg: 1200px;
+$media-xl: 1440px;

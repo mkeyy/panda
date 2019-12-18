@@ -1,0 +1,29 @@
+.pt-page {
+  padding: 120px 20%;
+
+  .pt-updated {
+    display: flex;
+    font-size: 13px;
+    line-height: 13px;
+    text-transform: uppercase;
+    color: rgba($c-primary, 0.6);
+    margin: 0 0 10px;
+
+    .pt-tag {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      color: $c-tertiary;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: rgba($c-primary, 0.6);
+        margin: 0 10px;
+      }
+    }
+  }
+}

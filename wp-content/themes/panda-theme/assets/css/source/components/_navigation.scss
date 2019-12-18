@@ -1,0 +1,27 @@
+.pt-navigation--primary {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0;
+
+  .pt-menu {
+    @extend .pt-list--unstyled;
+
+    height: 100%;
+
+    .menu-item a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 40px;
+      color: rgba($c-white, 0.6);
+      padding: 0 15px;
+    }
+
+    .menu-item:hover a,
+    .current-menu-item a {
+      color: $c-secondary;
+    }
+  }
+}

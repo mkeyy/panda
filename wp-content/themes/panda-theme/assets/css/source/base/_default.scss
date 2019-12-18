@@ -1,0 +1,66 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.pt-site {
+  position: relative;
+  display: flex;
+}
+
+.pt-container {
+  max-width: $site-width;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+.pt-list--unstyled {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pt-wysiwyg {
+  ul, ol {
+    padding: 0 0 0 15px;
+    margin: 0 0 20px;
+
+    > li {
+      padding: 0 0 10px;
+    }
+  }
+
+  ul {
+    padding: 0;
+
+    > li {
+      display: flex;
+
+      &::before {
+        content: "\2022";
+        font-weight: 700;
+        color: $c-tertiary;
+        margin: 0 10px 0 0;
+      }
+    }
+  }
+}
