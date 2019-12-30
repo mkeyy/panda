@@ -8,6 +8,8 @@ module.exports = function (grunt) {
         cmq: 'grunt-combine-media-queries'
     });
 
+    const sass = require('node-sass');
+
     grunt.loadNpmTasks('grunt-file-hash');
 
     /**
@@ -84,6 +86,8 @@ module.exports = function (grunt) {
 
         sass: {
             options: {
+                implementation: sass,
+                sourceMap: true,
                 banner: '<%= tag.banner %>'
             },
             dev: {

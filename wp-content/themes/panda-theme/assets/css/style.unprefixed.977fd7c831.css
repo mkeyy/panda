@@ -718,12 +718,16 @@ img {
 }
 
 .pt-publications .pt-publication .pt-publication__content .pt-title {
+	font-size: 20px;
+	line-height: 22px;
 	font-weight: 400;
 	color: #fff;
 	margin: 0 0 5px;
 }
 
 .pt-publications .pt-publication .pt-publication__content .pt-authors {
+	font-size: 14px;
+	line-height: 1;
 	color: #fff;
 	margin: 0;
 }
@@ -790,7 +794,7 @@ img {
 }
 
 .pt-aside .pt-aside__header .pt-logo:hover {
-	background-color: #e6e6e6;
+	background-color: #e6e5e5;
 }
 
 .pt-aside .pt-aside__header .pt-logo .pt-svg--logo-agh {
@@ -843,4 +847,6 @@ img {
 }
 
 /** Import templates */
+
+/*# sourceMappingURL=style.unprefixed.css.map */
 
