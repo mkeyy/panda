@@ -1,10 +1,45 @@
 .pt-homepage {
   display: flex;
+  flex-direction: column;
   height: 100vh;
+  padding: 150px 10% 50px;
 
-  .pt-title {
-    font-size: 90px;
-    line-height: 1;
-    padding: 150px 150px 50px;
+  .pt-section--header {
+    padding: 0 0 50px;
+
+    .pt-title {
+      position: relative;
+      width: 100%;
+
+      > h1 {
+        position: relative;
+        display: inline-block;
+        z-index: 1;
+        font-size: 70px;
+        line-height: 1;
+        background-color: $c-secondary;
+        margin: 0 0 20px;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        display: block;
+        z-index: 0;
+        top: -50px;
+        right: 10%;
+        width: 350px;
+        height: 350px;
+        border: 8px solid $c-tertiary;
+      }
+    }
+
+    .pt-description {
+      max-width: 300px;
+    }
+  }
+
+  .pt-section--informations {
+
   }
 }

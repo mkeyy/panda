@@ -17,6 +17,10 @@
       line-height: 40px;
       color: rgba($c-white, 0.6);
       padding: 0 15px;
+
+      &::after {
+        display: none;
+      }
     }
 
     .menu-item:hover a,

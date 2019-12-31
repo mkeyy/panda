@@ -35,7 +35,8 @@ function panda_admin_menu() {
     /** Disable content editor for listed templates */
     add_action('admin_init', function () {
         $templates = array(
-            'tpl-publications.php',
+            'front-page.php',
+            'page-templates/tpl-publications.php',
         );
 
         if ( isset( $_GET['post'] ) ) {
@@ -49,7 +50,7 @@ function panda_admin_menu() {
         $template_file = get_post_meta($post_id, '_wp_page_template', true);
 
         foreach($templates as $template) {
-            if ($template_file == 'page-templates/'. $template) { // edit the template name
+            if ($template_file == $template) { // edit the template name
                 remove_post_type_support('page', 'editor');
             }
         }

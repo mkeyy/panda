@@ -525,13 +525,31 @@ a:visited {
 	outline: none;
 }
 
-a {
-	font-weight: 700;
-	color: #da5d8b;
+a:not([class]),
+a[class=""] {
+	position: relative;
+	color: #ffa500;
 }
 
-a:hover {
-	color: #d1336d;
+a:not([class])::after,
+a[class=""]::after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 1px;
+	display: block;
+	margin-top: 2px;
+	right: 0;
+	background: #ffa500;
+	transition: width .2s ease-in-out;
+	-webkit-transition: width .2s ease-in-out;
+}
+
+a:not([class]):hover::after,
+a[class=""]:hover::after {
+	width: 100%;
+	left: 0;
+	background: #ffa500;
 }
 
 *,
@@ -596,7 +614,7 @@ img {
 .pt-wysiwyg ul > li::before {
 	content: "\2022";
 	font-weight: 700;
-	color: #da5d8b;
+	color: #ffa500;
 	margin: 0 10px 0 0;
 }
 
@@ -621,6 +639,10 @@ img {
 	line-height: 40px;
 	color: rgba(255, 255, 255, 0.6);
 	padding: 0 15px;
+}
+
+.pt-navigation--primary .pt-menu .menu-item a::after {
+	display: none;
 }
 
 .pt-navigation--primary .pt-menu .menu-item:hover a,
@@ -657,13 +679,44 @@ img {
 
 .pt-homepage {
 	display: flex;
+	flex-direction: column;
 	height: 100vh;
+	padding: 150px 10% 50px;
 }
 
-.pt-homepage .pt-title {
-	font-size: 90px;
+.pt-homepage .pt-section--header {
+	padding: 0 0 50px;
+}
+
+.pt-homepage .pt-section--header .pt-title {
+	position: relative;
+	width: 100%;
+}
+
+.pt-homepage .pt-section--header .pt-title > h1 {
+	position: relative;
+	display: inline-block;
+	z-index: 1;
+	font-size: 70px;
 	line-height: 1;
-	padding: 150px 150px 50px;
+	background-color: #fff;
+	margin: 0 0 20px;
+}
+
+.pt-homepage .pt-section--header .pt-title::after {
+	position: absolute;
+	content: "";
+	display: block;
+	z-index: 0;
+	top: -50px;
+	right: 10%;
+	width: 350px;
+	height: 350px;
+	border: 8px solid #ffa500;
+}
+
+.pt-homepage .pt-section--header .pt-description {
+	max-width: 300px;
 }
 
 .pt-main {
@@ -673,7 +726,7 @@ img {
 }
 
 .pt-page {
-	padding: 120px 20%;
+	padding: 120px 10%;
 }
 
 .pt-page .pt-updated {
@@ -689,7 +742,7 @@ img {
 	display: flex;
 	align-items: center;
 	font-weight: 700;
-	color: #da5d8b;
+	color: #ffa500;
 }
 
 .pt-page .pt-updated .pt-tag::after {
@@ -709,26 +762,29 @@ img {
 .pt-publications .pt-publication {
 	display: flex;
 	justify-content: space-between;
-	background-color: #333;
-	margin: 0 0 5px;
+	padding: 0 0 5px;
+}
+
+.pt-publications .pt-publication:not(:last-of-type) {
+	border-bottom: 1px solid rgba(51, 51, 51, 0.3);
 }
 
 .pt-publications .pt-publication .pt-publication__content {
-	padding: 20px 25px;
+	padding: 20px 25px 20px 0;
 }
 
 .pt-publications .pt-publication .pt-publication__content .pt-title {
-	font-size: 20px;
-	line-height: 22px;
-	font-weight: 400;
-	color: #fff;
-	margin: 0 0 5px;
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: 700;
+	color: #333;
+	margin: 0 0 10px;
 }
 
 .pt-publications .pt-publication .pt-publication__content .pt-authors {
 	font-size: 14px;
 	line-height: 1;
-	color: #fff;
+	color: #333;
 	margin: 0;
 }
 
@@ -736,19 +792,18 @@ img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #da5d8b;
-	padding: 20px;
+	padding: 15px;
 	margin: auto 0 0;
 }
 
-.pt-publications .pt-publication .pt-publication__link:hover {
-	background-color: #d1336d;
+.pt-publications .pt-publication .pt-publication__link .pt-svg--ic-external {
+	width: 20px;
+	height: 20px;
+	fill: #ffa500;
 }
 
-.pt-publications .pt-publication .pt-publication__link .pt-svg--ic-external {
-	width: 25px;
-	height: 25px;
-	fill: #fff;
+.pt-publications .pt-publication .pt-publication__link:hover .pt-svg--ic-external {
+	fill: #cc8400;
 }
 
 .pt-aside {
@@ -786,15 +841,15 @@ img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-width: 85px;
+	min-width: 70px;
 	height: 70px;
-	background-color: #cccccc;
+	background-color: #fff;
 	margin: 0 0 0 auto;
 	transition: background-color 0.3s ease-in-out;
 }
 
 .pt-aside .pt-aside__header .pt-logo:hover {
-	background-color: #e6e5e5;
+	background-color: #cccccc;
 }
 
 .pt-aside .pt-aside__header .pt-logo .pt-svg--logo-agh {
@@ -820,6 +875,7 @@ img {
 	font-family: "Titillium Web", sans-serif;
 	font-size: 30px;
 	line-height: 34px;
+	font-weight: 700;
 	color: #fff;
 	margin: 0 0 10px;
 	transition: color 0.3s ease-in-out;

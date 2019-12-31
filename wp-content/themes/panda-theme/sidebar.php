@@ -10,6 +10,11 @@ $academy = pt_get_option('website_academy');
 $department = pt_get_option('website_department');
 $departmentLink = pt_get_option('website_department_link');
 $description = pt_get_option('website_description');
+
+$orphan = null;
+if (class_exists('iworks_orphan')) {
+    $orphan = new iworks_orphan();
+}
 ?>
 
 <aside class="pt-aside">
@@ -37,7 +42,9 @@ $description = pt_get_option('website_description');
             <?php endif; ?>
 
             <?php if (!empty($description)): ?>
-                <div class="pt-description"><?= wpautop($description) ?></div>
+                <div class="pt-description">
+                    <?= $orphan ? wpautop($orphan->replace($description)) : wpautop($description) ?>
+                </div>
             <?php endif; ?>
         </div>
 

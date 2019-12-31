@@ -51,11 +51,27 @@ a, a:hover, a:visited {
   outline: none;
 }
 
-a {
-  font-weight: 700;
+a:not([class]),
+a[class=""] {
+  position: relative;
   color: $c-tertiary;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    display: block;
+    margin-top: 2px;
+    right: 0;
+    background: $c-tertiary;
+    transition: width .2s ease-in-out;
+    -webkit-transition: width .2s ease-in-out;
+  }
 
-  &:hover {
-    color: darken($c-tertiary, 10%);
+  &:hover::after {
+    width: 100%;
+    left: 0;
+    background: $c-tertiary;
   }
 }

@@ -31,14 +31,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-width: 85px;
+      min-width: 70px;
       height: 70px;
-      background-color: darken($c-secondary, 20%);
+      background-color: $c-secondary;
       margin: 0 0 0 auto;
       transition: background-color 0.3s ease-in-out;
 
       &:hover {
-        background-color: darken($c-secondary, 10%);
+        background-color: darken($c-secondary, 20%);
       }
 
       .pt-svg--logo-agh {
@@ -64,6 +64,7 @@
         font-family: $f-basic;
         font-size: 30px;
         line-height: 34px;
+        font-weight: 700;
         color: $c-secondary;
         margin: 0 0 10px;
         transition: color 0.3s ease-in-out;

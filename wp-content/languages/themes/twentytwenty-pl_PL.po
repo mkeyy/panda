@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Twenty Twenty package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-11-13 07:40:44+0000\n"
+"PO-Revision-Date: 2019-12-18 09:27:14+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,6 +18,10 @@ msgstr "Nasz domyślny motyw na 2020 ma na celu pełne wykorzystanie elastyczno�
 #. Theme Name of the theme
 msgid "Twenty Twenty"
 msgstr "Twenty Twenty"
+
+#: classes/class-twentytwenty-customize.php:246
+msgid "Show author bio"
+msgstr "Pokaż biogram autora"
 
 #: inc/starter-content.php:38
 msgctxt "Theme starter content"
@@ -53,19 +57,19 @@ msgstr "Czytaj więcej"
 msgid "Apply a custom color for links, buttons, featured images."
 msgstr "Zastosuj własny kolor dla odnośników, przycisków, obrazków wyróżniających."
 
-#: classes/class-twentytwenty-customize.php:331
+#: classes/class-twentytwenty-customize.php:352
 msgid "Overlay Background Color"
 msgstr "Kolor tła nakładki"
 
-#: classes/class-twentytwenty-customize.php:353
+#: classes/class-twentytwenty-customize.php:374
 msgid "Overlay Text Color"
 msgstr "Kolor tekstu nakładki"
 
-#: classes/class-twentytwenty-customize.php:262
+#: classes/class-twentytwenty-customize.php:283
 msgid "Settings for the \"Cover Template\" page template. Add a featured image to use as background."
 msgstr "Ustawienia \"Szablonu z okładką\" dla stron. Proszę dodać obrazek wyróżniający aby ustawić tło okładki."
 
-#: classes/class-twentytwenty-customize.php:374
+#: classes/class-twentytwenty-customize.php:395
 msgid "Overlay Opacity"
 msgstr "Przeźroczystość nakładki"
 
@@ -89,7 +93,7 @@ msgstr "Sierpień 1 -- Grudzień 1"
 msgid "Theatre of Operations"
 msgstr "Obszar działania"
 
-#: inc/template-tags.php:387
+#: inc/template-tags.php:393
 msgctxt "A string that is output before one or more categories"
 msgid "In"
 msgstr "w"
@@ -106,11 +110,11 @@ msgstr "„Cyborgi, jak ustaliła filozof Donna Haraway, nie okazują czci. Nie 
 msgid "Works and Days"
 msgstr "Prace i dni"
 
-#: classes/class-twentytwenty-customize.php:354
+#: classes/class-twentytwenty-customize.php:375
 msgid "The color used for the text in the overlay."
 msgstr "Kolor używany do tekstu w nakładce."
 
-#: classes/class-twentytwenty-customize.php:332
+#: classes/class-twentytwenty-customize.php:353
 msgid "The color used for the overlay. Defaults to the accent color."
 msgstr "Kolor używany w nakładce. Domyślnie kolor akcentu."
 
@@ -150,7 +154,7 @@ msgstr "szukaj ponownie"
 msgid "404 not found"
 msgstr "404 nie znaleziono"
 
-#: searchform.php:24 template-parts/modal-search.php:20
+#: template-parts/modal-search.php:20 searchform.php:24
 msgid "Search for:"
 msgstr "Szukaj:"
 
@@ -212,7 +216,7 @@ msgid "Comments"
 msgstr "Komentarze"
 
 #. translators: %s: Author name
-#: template-parts/entry-author-bio.php:20 inc/template-tags.php:348
+#: template-parts/entry-author-bio.php:20 inc/template-tags.php:354
 msgid "By %s"
 msgstr "Autor: %s"
 
@@ -220,11 +224,11 @@ msgstr "Autor: %s"
 msgid "Full Width Template"
 msgstr "Szablon wykorzystujący całą szerokość ekranu"
 
-#: classes/class-twentytwenty-customize.php:249
+#: classes/class-twentytwenty-customize.php:270
 msgid "Summary"
 msgstr "wypisy"
 
-#: classes/class-twentytwenty-customize.php:248
+#: classes/class-twentytwenty-customize.php:269
 msgid "Full text"
 msgstr "całą treść"
 
@@ -267,12 +271,12 @@ msgstr "Oparte na WordPressie"
 msgid "Search"
 msgstr "Szukaj"
 
-#: inc/template-tags.php:401
+#: inc/template-tags.php:407
 msgid "Tags"
 msgstr "Tagi"
 
-#: template-parts/entry-header.php:36 template-parts/content-cover.php:70
-#: inc/template-tags.php:383
+#: template-parts/content-cover.php:70 template-parts/entry-header.php:36
+#: inc/template-tags.php:389
 msgid "Categories"
 msgstr "Kategorie"
 
@@ -297,7 +301,7 @@ msgstr "Menu stopki"
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr "Edycja <span class=\"screen-reader-text\">%s</span>"
 
-#: inc/starter-content.php:176 inc/starter-content.php:186 functions.php:491
+#: functions.php:491 inc/starter-content.php:176 inc/starter-content.php:186
 msgid "Primary"
 msgstr "Głowny"
 
@@ -316,7 +320,7 @@ msgctxt "comments title"
 msgid "One reply on &ldquo;%s&rdquo;"
 msgstr "W odpowiedzi na &ldquo;%s&rdquo;"
 
-#: inc/template-tags.php:341
+#: inc/template-tags.php:347
 msgid "Post author"
 msgstr "Autor wpisu"
 
@@ -329,7 +333,7 @@ msgid "Continue reading"
 msgstr "Kontynuuj czytanie"
 
 #. Template Name of the theme
-#: classes/class-twentytwenty-customize.php:260
+#: classes/class-twentytwenty-customize.php:281
 msgid "Cover Template"
 msgstr "Szablon z okładką"
 
@@ -357,7 +361,7 @@ msgstr "Odnośniki społecznościowe"
 msgid "Scroll Down"
 msgstr "Przewiń w dół"
 
-#: inc/template-tags.php:365
+#: inc/template-tags.php:371
 msgid "Post date"
 msgstr "Data wpisu"
 
@@ -445,11 +449,11 @@ msgstr "Stopka 1"
 msgid "Retina logo"
 msgstr "Retina logo"
 
-#: classes/class-twentytwenty-customize.php:246
+#: classes/class-twentytwenty-customize.php:267
 msgid "On archive pages, posts show:"
 msgstr "Na stronach archiwów, pokazywać wpisy:"
 
-#: classes/class-twentytwenty-walker-page.php:134 inc/template-tags.php:545
+#: classes/class-twentytwenty-walker-page.php:134 inc/template-tags.php:555
 msgid "Show sub menu"
 msgstr "Pokaż podmenu"
 
@@ -457,7 +461,7 @@ msgstr "Pokaż podmenu"
 msgid "Horizontal"
 msgstr "Poziomo"
 
-#: inc/template-tags.php:439
+#: inc/template-tags.php:445
 msgid "Sticky post"
 msgstr "Wpis przypięty"
 
@@ -481,7 +485,7 @@ msgstr "Autor wpisu"
 msgid "Expanded Social links"
 msgstr "Rozszerzone odnośniki społecznościowe"
 
-#: classes/class-twentytwenty-customize.php:375
+#: classes/class-twentytwenty-customize.php:396
 msgid "Make sure that the contrast is high enough so that the text is readable."
 msgstr "Proszę się upewnić, że kontrast jest wystarczająco wysoki, aby tekst był czytelny."
 
@@ -493,7 +497,7 @@ msgstr "Rozwinięte"
 msgid "Subtle Background"
 msgstr "Tło podtytułu"
 
-#: classes/class-twentytwenty-customize.php:284
+#: classes/class-twentytwenty-customize.php:305
 msgid "Fixed Background Image"
 msgstr "Stałe położenie tła"
 
@@ -509,7 +513,7 @@ msgstr "Widgety z tej strefy będą wyświetlane w drugiej kolumnie stopki."
 msgid "Widgets in this area will be displayed in the first column in the footer."
 msgstr "Widgety z tej strefy będą wyświetlane w pierwszej kolumnie stopki."
 
-#: classes/class-twentytwenty-customize.php:285
+#: classes/class-twentytwenty-customize.php:306
 msgid "Creates a parallax effect when the visitor scrolls."
 msgstr "Tworzy efekt paralaksy, podczas przewijania strony przez odwiedzającego."
 
