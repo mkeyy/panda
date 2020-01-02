@@ -17,18 +17,26 @@ if (class_exists('iworks_orphan')) {
 }
 ?>
 
-<aside class="pt-aside">
+<aside id="pt-primary-navbar" class="pt-aside">
     <div class="pt-aside__header">
         <?php if (!empty($department) && !empty($departmentLink)): ?>
             <a href="<?= $departmentLink ?>" class="pt-department" target="_blank" rel="nofollow">
-                <?= $department ?>
+                <?= $orphan ? $orphan->replace($department) : $department ?>
             </a>
         <?php endif; ?>
 
         <a href="https://www.agh.edu.pl" class="pt-logo" target="_blank" rel="nofollow">
-            <?= assetSvg('logo-agh') ?>
+            <?= pt_asset_svg('logo-agh') ?>
         </a>
     </div>
+
+    <div class="pt-aside__mobile">
+        <button id="pt-toggle-menu" class="pt-btn pt-btn--toggle">
+            <?= pt_asset_svg('ic-menu') ?>
+            <?= pt_asset_svg('ic-close') ?>
+        </button>
+    </div>
+
     <div class="pt-aside__content">
         <div class="pt-headline">
             <?php if (!empty($name)): ?>
@@ -38,7 +46,7 @@ if (class_exists('iworks_orphan')) {
             <?php endif; ?>
 
             <?php if (!empty($academy)): ?>
-                <span class="pt-academy"><?= $academy ?></span>
+                <span class="pt-academy"><?= $orphan ? $orphan->replace($academy) : $academy ?></span>
             <?php endif; ?>
 
             <?php if (!empty($description)): ?>

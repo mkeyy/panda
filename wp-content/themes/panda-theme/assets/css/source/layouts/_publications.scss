@@ -1,5 +1,9 @@
 .pt-publications {
-  padding: 120px 10%;
+  padding: 150px 10px 50px;
+
+  @media (min-width: $media-sm) {
+    padding: 120px 10% 50px;
+  }
 
   .pt-publication {
     display: flex;
@@ -26,6 +30,10 @@
         line-height: 1;
         color: $c-primary;
         margin: 0;
+
+        > strong {
+          color: $c-tertiary;
+        }
       }
     }
 

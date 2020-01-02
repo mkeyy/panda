@@ -1,0 +1,16 @@
+.pt-btn {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.pt-btn--toggle {
+  background-color: $c-dark;
+
+  .pt-svg--ic-menu,
+  .pt-svg--ic-close {
+    width: 25px;
+    height: auto;
+    fill: $c-secondary;
+  }
+}

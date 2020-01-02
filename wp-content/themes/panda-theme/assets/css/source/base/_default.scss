@@ -13,6 +13,8 @@ html {
 }
 
 body {
+  display: flex;
+  flex: 1 1 100%;
   overflow-x: hidden;
 }
 
@@ -21,9 +23,9 @@ img {
   height: auto;
 }
 
-.pt-site {
-  position: relative;
-  display: flex;
+.pt-main {
+  display: block;
+  width: 100%;
 }
 
 .pt-container {
@@ -33,12 +35,6 @@ img {
   margin: 0 auto;
 }
 
-.pt-list--unstyled {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 .pt-wysiwyg {
   ul, ol {
     padding: 0 0 0 15px;
@@ -46,21 +42,6 @@ img {
 
     > li {
       padding: 0 0 10px;
-    }
-  }
-
-  ul {
-    padding: 0;
-
-    > li {
-      display: flex;
-
-      &::before {
-        content: "\2022";
-        font-weight: 700;
-        color: $c-tertiary;
-        margin: 0 10px 0 0;
-      }
     }
   }
 }

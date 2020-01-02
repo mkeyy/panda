@@ -1,16 +1,31 @@
 .pt-aside {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 500px;
-  min-height: 100vh;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: $c-primary;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+
+  @media (min-width: $media-sm) {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    transform: translateX(0);
+  }
 
   .pt-aside__header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: $c-dark;
-    margin-bottom: 50px;
+    margin: 0;
+
+    @media (min-width: $media-sm) {
+      margin: 0 0 50px;
+    }
 
     .pt-department {
       width: 100%;
@@ -31,8 +46,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-width: 70px;
-      height: 70px;
+      min-width: 60px;
+      height: 60px;
       background-color: $c-secondary;
       margin: 0 0 0 auto;
       transition: background-color 0.3s ease-in-out;
@@ -44,20 +59,56 @@
       .pt-svg--logo-agh {
         width: 50px;
         height: 50px;
-        fill: $c-secondary;
       }
+    }
+  }
+
+  .pt-aside__mobile {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: -60px;
+    transition: margin-right 0.5s ease-in-out;
+
+    .pt-btn--toggle {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      z-index: 101;
+      width: 61px;
+      height: 60px;
+
+      .pt-svg--ic-close {
+        display: none;
+      }
+    }
+
+    @media (min-width: $media-sm) {
+      display: none;
     }
   }
 
   .pt-aside__content {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: calc(100vh - 90px);
+    overflow-y: auto;
+    padding: 0 60px 0 0;
+    margin-top: -30px;
+
+    @media (min-width: $media-sm) {
+      padding: 0;
+      margin-top: 0;
+    }
 
     .pt-headline {
       display: flex;
       flex-direction: column;
-      padding: 0 15px;
+      padding: 0 10px;
+
+      @media (min-width: $media-sm) {
+        padding: 0 15px;
+      }
 
       .pt-name {
         display: block;
@@ -75,10 +126,15 @@
       }
 
       .pt-academy {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 20px;
         color: rgba($c-secondary, 0.8);
-        margin: 0 0 40px;
+        margin: 0 0 30px;
+
+        @media (min-width: $media-sm) {
+          font-size: 18px;
+          margin: 0 0 40px;
+        }
       }
 
       .pt-description {
@@ -89,6 +145,24 @@
           line-height: 18px;
           color: rgba($c-white, 0.6);
         }
+      }
+    }
+  }
+}
+
+.pt-aside.pt-active {
+  transform: translateX(0);
+
+  .pt-aside__mobile {
+    margin-right: 0;
+
+    .pt-btn--toggle {
+      .pt-svg--ic-menu {
+        display: none;
+      }
+
+      .pt-svg--ic-close {
+        display: block;
       }
     }
   }

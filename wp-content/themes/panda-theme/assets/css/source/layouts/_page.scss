@@ -1,5 +1,9 @@
 .pt-page {
-  padding: 120px 10%;
+  padding: 150px 10px 50px;
+
+  @media (min-width: $media-sm) {
+    padding: 120px 10% 50px;
+  }
 
   .pt-updated {
     display: flex;

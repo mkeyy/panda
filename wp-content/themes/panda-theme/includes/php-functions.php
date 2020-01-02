@@ -39,7 +39,7 @@ function pt_get_option($key = '', $default = false)
 * @param null $id
 * @return mixed|string
 */
-function assetSvg($filename = null, $additionalClasses = null, $id = null)
+function pt_asset_svg($filename = null, $additionalClasses = null, $id = null)
 {
 if (isset($id)) {
 $file = $svg_path = wp_get_attachment_image_url($id, '', false);

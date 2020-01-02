@@ -17,7 +17,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div class="pt-site">
 
     <?php get_template_part('sidebar'); ?>
 

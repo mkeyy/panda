@@ -5,7 +5,23 @@
      * Ready Event
      */
     $(document).ready(function () {
-        //
+        handleMobileMenu();
+
+        function handleMobileMenu() {
+            const menu = $('#pt-primary-navbar'),
+                target = menu.find('.pt-aside__content');
+
+            $('#pt-toggle-menu').on('click', function (e) {
+                e.preventDefault();
+
+                bodyScrollLock.enableBodyScroll(target[0]);
+                menu.toggleClass('pt-active');
+
+                if (menu.hasClass('pt-active')) {
+                    bodyScrollLock.disableBodyScroll(target[0]);
+                }
+            });
+        }
     });
 
     /**

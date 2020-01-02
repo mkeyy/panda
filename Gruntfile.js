@@ -28,8 +28,7 @@ module.exports = function (grunt) {
                 '<%= project.assets %>/js/source/main.js'
             ],
             js_vendor: [
-                '<%= project.assets %>/js/source/vendor/modernizr.js',
-                '<%= project.assets %>/js/source/vendor/media.match.js'
+                '<%= project.assets %>/js/source/vendor/bodyScrollLock.js'
             ]
         },
 

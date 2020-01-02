@@ -1,45 +1,87 @@
 .pt-homepage {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  padding: 150px 10% 50px;
+  min-height: 100vh;
+  padding: 150px 10px 50px;
+
+  @media (min-width: $media-sm) {
+    padding: 150px 10% 50px;
+  }
 
   .pt-section--header {
-    padding: 0 0 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
 
-    .pt-title {
-      position: relative;
+    @media (min-width: $media-xs) {
+      padding: 0 0 50px;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      z-index: 0;
+      top: -25px;
+      right: 0;
       width: 100%;
+      height: calc(100% + 35px);
+      border: 10px solid $c-tertiary;
 
-      > h1 {
-        position: relative;
-        display: inline-block;
-        z-index: 1;
-        font-size: 70px;
-        line-height: 1;
-        background-color: $c-secondary;
-        margin: 0 0 20px;
+      @media (min-width: $media-xs) {
+        top: -30px;
+        right: 10%;
+        width: 350px;
+        height: 250px;
       }
 
-      &::after {
-        position: absolute;
-        content: "";
-        display: block;
-        z-index: 0;
+      @media (min-width: $media-sm) {
         top: -50px;
         right: 10%;
         width: 350px;
         height: 350px;
-        border: 8px solid $c-tertiary;
+      }
+    }
+
+    .pt-title,
+    .pt-description {
+      position: relative;
+      display: inline-block;
+      z-index: 1;
+    }
+
+    .pt-title > h1 {
+      display: inline-block;
+      font-size: 40px;
+      line-height: 1;
+      background-color: $c-secondary;
+      padding: 0 0 20px;
+      margin: 0;
+
+      @media (min-width: $media-sm) {
+        font-size: 70px;
       }
     }
 
     .pt-description {
-      max-width: 300px;
+      max-width: 290px;
+      background-color: $c-secondary;
     }
   }
 
-  .pt-section--informations {
+  .pt-section--achievements {
+    padding: 50px 0 30px;
 
+    @media (min-width: $media-sm) {
+      padding: 65px 0 50px;
+    }
+
+    .pt-title {
+      font-size: 18px;
+      line-height: 1;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+    }
   }
 }

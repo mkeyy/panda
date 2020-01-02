@@ -14,7 +14,6 @@
         <span class="pt-created-by"><?= __('Created by Michał Korman', 'panda-theme') ?></span>
     </div>
 </footer>
-</div><!-- site end -->
 
 <?php wp_footer(); ?>
 

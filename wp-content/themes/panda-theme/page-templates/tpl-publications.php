@@ -31,7 +31,7 @@ $publications = get_post_meta(get_the_ID(), $prefix . 'publications', true);
 
                 <?php if (!empty($publication['link'])): ?>
                     <a href="<?= $publication['link'] ?>" class="pt-publication__link" target="_blank">
-                        <?= assetSvg('ic-external') ?>
+                        <?= pt_asset_svg('ic-external') ?>
                     </a>
                 <?php endif; ?>
             </div>

@@ -17,14 +17,13 @@
 @import "base/default";
 
 /** Import components */
+@import "components/buttons";
+@import "components/lists";
 @import "components/navigation";
 
 /** Import layout */
 @import "layouts/footer";
 @import "layouts/homepage";
-@import "layouts/main";
 @import "layouts/page";
 @import "layouts/publications";
 @import "layouts/sidebar";
-
-/** Import templates */

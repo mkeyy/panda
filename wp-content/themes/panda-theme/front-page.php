@@ -8,8 +8,6 @@
 get_header();
 
 $prefix = 'pt_homepage_';
-$title = get_post_meta(get_the_ID(), $prefix . 'title', true);
-$description = get_post_meta(get_the_ID(), $prefix . 'desc', true);
 
 $orphan = null;
 if (class_exists('iworks_orphan')) {
@@ -18,25 +16,43 @@ if (class_exists('iworks_orphan')) {
 ?>
 
 <div class="pt-homepage">
+    <?php
+    /** Header Section */
+
+    $headerTitle = get_post_meta(get_the_ID(), $prefix . 'header_title', true);
+    $headerDescription = get_post_meta(get_the_ID(), $prefix . 'header_desc', true);
+    ?>
     <section class="pt-section pt-section--header">
-        <?php if (!empty($title)): ?>
-            <div class="pt-title"><?= wpautop($title) ?></div>
+        <?php if (!empty($headerTitle)): ?>
+            <div class="pt-title"><?= wpautop($headerTitle) ?></div>
         <?php endif; ?>
 
-        <?php if (!empty($description)): ?>
+        <?php if (!empty($headerDescription)): ?>
             <div class="pt-description">
-                <?= $orphan ? wpautop($orphan->replace($description)) : wpautop($description) ?>
+                <?= $orphan ? wpautop($orphan->replace($headerDescription)) : wpautop($headerDescription) ?>
             </div>
         <?php endif; ?>
     </section>
 
-    <section class="pt-section pt-section--informations">
-        <div class="pt-achievements">
-            <div class="pt-title">
+    <?php
+    /** Achievements Section */
 
-            </div>
-        </div>
-    </section>
+    $achievementsTitle = get_post_meta(get_the_ID(), $prefix . 'achievements_title', true);
+    $achievements = get_post_meta(get_the_ID(), $prefix . 'achievements', true);
+    ?>
+    <?php if (!empty($achievements)): ?>
+        <section class="pt-section pt-section--achievements">
+            <?php if (!empty($achievementsTitle)): ?>
+                <h3 class="pt-title"><?= $achievementsTitle ?></h3>
+            <?php endif; ?>
+
+            <ul class="pt-list--primary pt-achievements">
+                <?php foreach ($achievements as $item): ?>
+                    <li><?= $item['achievement'] ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </section>
+    <?php endif; ?>
 </div>
 
 <?php get_footer(); ?>

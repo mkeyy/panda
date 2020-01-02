@@ -20,21 +20,37 @@ h1, h2, h3,
 }
 
 h1, .pt-h1 {
-  font-size: 60px;
-  line-height: 55px;
-  margin: 0 0 50px;
+  font-size: 35px;
+  line-height: 35px;
+  margin: 0 0 30px;
+
+  @media (min-width: $media-sm) {
+    font-size: 60px;
+    line-height: 55px;
+    margin: 0 0 50px;
+  }
 }
 
 h2, .pt-h2 {
-  font-size: 30px;
-  line-height: 32px;
-  margin: 0 0 20px;
-}
-
-h3, .pt-h3 {
   font-size: 24px;
   line-height: 26px;
   margin: 0 0 20px;
+
+  @media (min-width: $media-sm) {
+    font-size: 30px;
+    line-height: 32px;
+  }
+}
+
+h3, .pt-h3 {
+  font-size: 20px;
+  line-height: 22px;
+  margin: 0 0 20px;
+
+  @media (min-width: $media-sm) {
+    font-size: 24px;
+    line-height: 26px;
+  }
 }
 
 p, span {
@@ -51,27 +67,12 @@ a, a:hover, a:visited {
   outline: none;
 }
 
-a:not([class]),
-a[class=""] {
+a {
   position: relative;
   color: $c-tertiary;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    display: block;
-    margin-top: 2px;
-    right: 0;
-    background: $c-tertiary;
-    transition: width .2s ease-in-out;
-    -webkit-transition: width .2s ease-in-out;
-  }
+  transition: color 0.3s ease-in-out;
 
-  &:hover::after {
-    width: 100%;
-    left: 0;
-    background: $c-tertiary;
+  &:hover{
+    color: darken($c-tertiary, 10%);
   }
 }

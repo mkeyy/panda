@@ -1,7 +1,11 @@
 .pt-navigation--primary {
   display: flex;
   flex-direction: column;
-  padding: 50px 0;
+  padding: 10px 0 30px;
+
+  @media (min-width: $media-sm) {
+    padding: 50px 0;
+  }
 
   .pt-menu {
     @extend .pt-list--unstyled;
@@ -16,10 +20,14 @@
       font-weight: 400;
       line-height: 40px;
       color: rgba($c-white, 0.6);
-      padding: 0 15px;
+      padding: 0 10px;
 
       &::after {
         display: none;
+      }
+
+      @media (min-width: $media-sm) {
+        padding: 0 15px;
       }
     }
 

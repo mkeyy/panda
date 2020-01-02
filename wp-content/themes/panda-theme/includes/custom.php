@@ -93,8 +93,8 @@ function panda_front_end_css()
     /** Get assets mapping info */
     $assetsMapping = json_decode(file_get_contents(PANDA_ASSETS_DIR . 'mapping.json'), true);
 
-    wp_enqueue_style('panda-style', PANDA_CSS_URI . $assetsMapping['style'], array(), false);
     wp_enqueue_style('panda-fonts', 'https://fonts.googleapis.com/css?family=Titillium+Web:400,700,900&display=swap&subset=latin-ext', array(), false);
+    wp_enqueue_style('panda-style', PANDA_CSS_URI . $assetsMapping['style'], array(), false);
 }
 
 /**
@@ -104,7 +104,12 @@ function panda_front_end_css()
  */
 function panda_front_end_js()
 {
-    //wp_enqueue_script( 'ivn-custom', IVN_JS_URI . 'custom.js', array(), false, true );
+    /** Get assets mapping info */
+    $assetsMapping = json_decode(file_get_contents(PANDA_ASSETS_DIR . 'mapping.json'), true);
+
+    wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), false, true);
+    wp_enqueue_script('panda-vendor', PANDA_JS_URI . $assetsMapping['vendor'], array('jquery'), false, true);
+    wp_enqueue_script('panda-script', PANDA_JS_URI . $assetsMapping['main'], array('jquery', 'panda-vendor'), false, true);
 }
 
 /**
