@@ -27,18 +27,8 @@ function pt_tpl_publications_metaboxes()
         )
     ));
     $publications->add_group_field($publicationsGroup, array(
-        'name' => esc_html__('Tytuł', 'cmb2'),
-        'id' => 'title',
-        'type' => 'text'
-    ));
-    $publications->add_group_field($publicationsGroup, array(
-        'name' => esc_html__('Autorzy', 'cmb2'),
-        'id' => 'authors',
+        'name' => esc_html__('Publikacja', 'cmb2'),
+        'id' => 'text',
         'type' => 'textarea'
-    ));
-    $publications->add_group_field($publicationsGroup, array(
-        'name' => esc_html__('Odnośnik', 'cmb2'),
-        'id' => 'link',
-        'type' => 'text_url'
     ));
 }

@@ -1,0 +1,7 @@
+.pt-archive {
+  padding: 150px 10px 50px;
+
+  @media (min-width: $media-sm) {
+    padding: 90px 10% 50px;
+  }
+}

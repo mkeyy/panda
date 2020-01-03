@@ -39,20 +39,46 @@ if (class_exists('iworks_orphan')) {
 
     $achievementsTitle = get_post_meta(get_the_ID(), $prefix . 'achievements_title', true);
     $achievements = get_post_meta(get_the_ID(), $prefix . 'achievements', true);
+    $newsTitle = get_post_meta(get_the_ID(), $prefix . 'news_title', true);
+    $news = new WP_Query(array(
+        'post_type' => 'post',
+        'posts_per_page' => 5
+    ))
     ?>
-    <?php if (!empty($achievements)): ?>
-        <section class="pt-section pt-section--achievements">
-            <?php if (!empty($achievementsTitle)): ?>
-                <h3 class="pt-title"><?= $achievementsTitle ?></h3>
-            <?php endif; ?>
 
-            <ul class="pt-list--primary pt-achievements">
-                <?php foreach ($achievements as $item): ?>
-                    <li><?= $item['achievement'] ?></li>
-                <?php endforeach; ?>
-            </ul>
-        </section>
-    <?php endif; ?>
+    <section class="pt-section pt-section--columns">
+        <?php if (!empty($news)): ?>
+            <div class="pt-news">
+                <?php if (!empty($newsTitle)): ?>
+                    <h3 class="pt-title"><?= $newsTitle ?></h3>
+                <?php endif; ?>
+
+                <?php if ($news->have_posts()): ?>
+                    <ul class="pt-list--primary pt-list">
+                        <?php while ($news->have_posts()): $news->the_post(); ?>
+                            <li class="pt-item">
+                                <a href="<?= get_the_permalink() ?>" class="pt-link"><?= get_the_title() ?></a>
+                            </li>
+                        <?php endwhile; ?>
+                    </ul>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if (!empty($achievements)): ?>
+            <div class="pt-achievements">
+                <?php if (!empty($achievementsTitle)): ?>
+                    <h3 class="pt-title"><?= $achievementsTitle ?></h3>
+                <?php endif; ?>
+
+                <ul class="pt-list--primary pt-list">
+                    <?php foreach ($achievements as $item): ?>
+                        <li><?= $item['achievement'] ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+    </section>
 </div>
 
 <?php get_footer(); ?>

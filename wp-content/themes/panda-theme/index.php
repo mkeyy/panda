@@ -8,18 +8,14 @@
 get_header();
 ?>
 
-    <div class="pt-content">
-
-        <?php
-        if (have_posts()) {
-            while (have_posts()) {
-                the_post();
-            }
-        } else {
-            get_template_part('404');
-        }
-        ?>
-
-    </div>
+<?php
+if (have_posts()) {
+    while (have_posts()) {
+        the_post();
+    }
+} else {
+    get_template_part('404');
+}
+?>
 
 <?php get_footer(); ?>

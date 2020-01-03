@@ -2,57 +2,18 @@
   padding: 150px 10px 50px;
 
   @media (min-width: $media-sm) {
-    padding: 120px 10% 50px;
+    padding: 90px 10% 50px;
   }
 
-  .pt-publication {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 0 5px;
+  .pt-item {
+    margin: 0 0 20px;
 
-    &:not(:last-of-type) {
-      border-bottom: 1px solid rgba($c-primary, 0.3);
-    }
-
-    .pt-publication__content {
-      padding: 20px 25px 20px 0;
-
-      .pt-title {
-        font-size: 18px;
-        line-height: 18px;
-        font-weight: 700;
-        color: $c-primary;
-        margin: 0 0 10px;
-      }
-
-      .pt-authors {
-        font-size: 14px;
-        line-height: 1;
-        color: $c-primary;
-        margin: 0;
-
-        > strong {
-          color: $c-tertiary;
-        }
-      }
-    }
-
-    .pt-publication__link {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 15px;
-      margin: auto 0 0;
-
-      .pt-svg--ic-external {
-        width: 20px;
-        height: 20px;
-        fill: $c-tertiary;
-      }
-
-      &:hover .pt-svg--ic-external {
-        fill: darken($c-tertiary, 10%);
-      }
+    .pt-text {
+      font-size: 16px;
+      line-height: 16px;
+      font-weight: 500;
+      color: $c-primary;
+      margin: 0;
     }
   }
 }

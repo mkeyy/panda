@@ -1,24 +1,17 @@
 .pt-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
   padding: 20px 15px;
 
   .pt-site-info {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
 
-    .pt-copyrights,
-    .pt-created-by {
+    .pt-copyrights {
+      display: block;
       font-size: 12px;
-      color: rgba($c-secondary, 0.6);
-      margin: 0;
-    }
-
-    .pt-created-by {
+      line-height: 1.25;
       color: $c-primary;
+      white-space: nowrap;
+      margin: 0;
     }
   }
 }

@@ -70,18 +70,33 @@
     }
   }
 
-  .pt-section--achievements {
-    padding: 50px 0 30px;
+  .pt-section--columns {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0 10px;
 
     @media (min-width: $media-sm) {
-      padding: 65px 0 50px;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 65px 0 20px;
     }
 
-    .pt-title {
-      font-size: 18px;
-      line-height: 1;
-      text-transform: uppercase;
-      margin: 0 0 10px;
+    .pt-news,
+    .pt-achievements {
+      width: 100%;
+      margin: 0 0 20px;
+
+      @media (min-width: $media-sm) {
+        width: calc(50% - 10px);
+        margin: 0;
+      }
+
+      .pt-title {
+        font-size: 18px;
+        line-height: 1;
+        text-transform: uppercase;
+        margin: 0 0 10px;
+      }
     }
   }
 }

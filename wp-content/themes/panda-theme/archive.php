@@ -1,46 +1,27 @@
 <?php
 /**
- * The template for displaying Archive pages.
+ * The template for displaying archive pages.
  *
  * @package Panda Theme
  */
 
 get_header();
 ?>
+<div class="pt-archive">
+    <h1 class="pt-h1 pt-title">
+        <?= get_the_title(get_option('page_for_posts', true)); ?>
+        <span class="pt-line"></span>
+    </h1>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+    <?php if (have_posts()) : ?>
+        <ul class="pt-list--secondary pt-list">
+            <?php while (have_posts()) : the_post(); ?>
+                <li class="pt-item">
+                    <a href="<?= get_the_permalink() ?>" class="pt-link"><?= get_the_title() ?></a>
+                </li>
+            <?php endwhile; ?>
+        </ul>
+    <?php endif; ?>
+</div>
 
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-				?>
-			</header><!-- .page-header -->
-
-			<?php
-			// Start the Loop.
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content/content', 'excerpt' );
-
-				// End the loop.
-			endwhile;
-
-			// If no content, include the "No posts found" template.
-		else :
-			get_template_part( 'template-parts/content/content', 'none' );
-
-		endif;
-		?>
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_footer(); ?>
+<?php get_footer() ?>

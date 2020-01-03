@@ -9,13 +9,10 @@
 html {
   font-size: 62.5%;
   position: relative;
-  overflow-x: hidden;
 }
 
 body {
   display: flex;
-  flex: 1 1 100%;
-  overflow-x: hidden;
 }
 
 img {
@@ -24,8 +21,13 @@ img {
 }
 
 .pt-main {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
+  min-height: 100vh;
+  max-width: $site-width;
+  margin: 0 auto;
 }
 
 .pt-container {
@@ -44,4 +46,12 @@ img {
       padding: 0 0 10px;
     }
   }
+}
+
+.pt-line {
+  display: block;
+  width: 130px;
+  height: 8px;
+  background-color: $c-tertiary;
+  margin: 20px 0;
 }

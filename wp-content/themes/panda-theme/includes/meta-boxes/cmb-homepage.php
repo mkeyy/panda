@@ -35,10 +35,10 @@ function pt_homepage_metaboxes()
         )
     ));
 
-    /** Achievements */
-    $achievements = new_cmb2_box(array(
-        'id' => $prefix . 'achievements_tab',
-        'title' => __('Osiągnięcia', 'cmb2'),
+    /** Columns */
+    $columns = new_cmb2_box(array(
+        'id' => $prefix . 'columns_tab',
+        'title' => __('Aktualności/Osiągnięcia', 'cmb2'),
         'object_types' => array('page'),
         'show_on' => array('key' => 'page-template', 'value' => 'front-page.php'),
         'context' => 'normal',
@@ -46,13 +46,19 @@ function pt_homepage_metaboxes()
         'show_names' => true,
         'closed' => true
     ));
-    $achievements->add_field(array(
-        'name' => esc_html__('Tytuł', 'cmb2'),
+    $columns->add_field(array(
+        'name' => esc_html__('Tytuł Aktualności', 'cmb2'),
+        'id' => $prefix . 'news_title',
+        'type' => 'text',
+        'default' => 'Aktualności:'
+    ));
+    $columns->add_field(array(
+        'name' => esc_html__('Tytuł Osiągnięcia', 'cmb2'),
         'id' => $prefix . 'achievements_title',
         'type' => 'text',
         'default' => 'Osiągnięcia:'
     ));
-    $achievementsGroup = $achievements->add_field(array(
+    $columnsGroup = $columns->add_field(array(
         'id' => $prefix . 'achievements',
         'type' => 'group',
         'options' => array(
@@ -63,7 +69,7 @@ function pt_homepage_metaboxes()
             'closed' => true,
         )
     ));
-    $achievements->add_group_field($achievementsGroup, array(
+    $columns->add_group_field($columnsGroup, array(
         'name' => esc_html__('Osiagnięcie', 'cmb2'),
         'id' => 'achievement',
         'type' => 'text'
