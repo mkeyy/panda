@@ -1120,7 +1120,7 @@ h3,
 .pt-homepage .pt-section--columns {
 	flex-direction: row;
 	justify-content: space-between;
-	padding: 65px 0 20px;
+	padding: 100px 0 20px;
 }
 
 .pt-homepage .pt-section--columns .pt-news,
