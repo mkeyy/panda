@@ -738,6 +738,28 @@ img {
 
 /** Import layout */
 
+.pt-404 {
+	padding: 150px 50px 50px;
+}
+
+.pt-404 .pt-title {
+	font-size: 120px;
+	line-height: 1;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.pt-404 .pt-description {
+	font-size: 25px;
+	line-height: 1.1;
+	text-align: center;
+}
+
+.pt-404 .pt-description .pt-link {
+	display: block;
+	padding: 20px 0 0;
+}
+
 .pt-archive {
 	padding: 150px 10px 50px;
 }
@@ -1096,6 +1118,10 @@ h3,
 
 .pt-navigation--primary .pt-menu .menu-item a {
 	padding: 0 15px;
+}
+
+.pt-404 .pt-title {
+	font-size: 180px;
 }
 
 .pt-archive {

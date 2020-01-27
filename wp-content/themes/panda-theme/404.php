@@ -8,21 +8,13 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<div class="pt-404">
+    <h1 class="pt-h1 pt-title"><?= __('404', 'panda-theme') ?></h1>
 
-			<div class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'twentynineteen' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentynineteen' ); ?></p>
-					<?php get_search_form(); ?>
-				</div><!-- .page-content -->
-			</div><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+    <p class="pt-description">
+        <?= __('Hola hola, panie kolego nie ma takiej strony, najlepiej wróć na ', 'panda-theme') ?>
+        <a href="<?= get_home_url() ?>" class="pt-link"><?= __('stronę główną', 'panda-theme') ?></a>
+    </p>
+</div>
 
 <?php get_footer(); ?>

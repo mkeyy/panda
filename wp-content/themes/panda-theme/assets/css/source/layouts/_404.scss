@@ -1,0 +1,25 @@
+.pt-404 {
+  padding: 150px 50px 50px;
+
+  .pt-title {
+    font-size: 120px;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 50px;
+
+    @media (min-width: $media-sm) {
+      font-size: 180px;
+    }
+  }
+
+  .pt-description {
+    font-size: 25px;
+    line-height: 1.1;
+    text-align: center;
+
+    .pt-link {
+      display: block;
+      padding: 20px 0 0;
+    }
+  }
+}

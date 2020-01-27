@@ -7,6 +7,7 @@
 
 get_header();
 ?>
+
 <div class="pt-archive">
     <h1 class="pt-h1 pt-title">
         <?= get_the_title(get_option('page_for_posts', true)); ?>
