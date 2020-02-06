@@ -47,21 +47,19 @@ if (class_exists('iworks_orphan')) {
     ?>
 
     <section class="pt-section pt-section--columns">
-        <?php if (!empty($news)): ?>
+        <?php if ($news->have_posts()): ?>
             <div class="pt-news">
                 <?php if (!empty($newsTitle)): ?>
                     <h3 class="pt-title"><?= $newsTitle ?></h3>
                 <?php endif; ?>
 
-                <?php if ($news->have_posts()): ?>
-                    <ul class="pt-list--primary pt-list">
-                        <?php while ($news->have_posts()): $news->the_post(); ?>
-                            <li class="pt-item">
-                                <a href="<?= get_the_permalink() ?>" class="pt-link"><?= get_the_title() ?></a>
-                            </li>
-                        <?php endwhile; ?>
-                    </ul>
-                <?php endif; ?>
+                <ul class="pt-list--primary pt-list">
+                    <?php while ($news->have_posts()): $news->the_post(); ?>
+                        <li class="pt-item">
+                            <a href="<?= get_the_permalink() ?>" class="pt-link"><?= get_the_title() ?></a>
+                        </li>
+                    <?php endwhile; ?>
+                </ul>
             </div>
         <?php endif; ?>
 
