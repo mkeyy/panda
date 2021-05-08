@@ -13,11 +13,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php wp_title('|', true, 'right');
         bloginfo('name'); ?></title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="<?php printf('%s/assets/favicon/favicon.ico', get_template_directory_uri()); ?>">
+
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 
-    <?php get_template_part('sidebar'); ?>
+<?php get_template_part('sidebar'); ?>
 
-    <main class="pt-main">
+<main class="pt-main">
